@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <!-- três folhas empilhadas: as camadas -->
+  <path d="M64 14 118 40 64 66 10 40Z" fill="#c9c3f5"/>
+  <path d="M64 38 118 64 64 90 10 64Z" fill="#8d82ec"/>
+  <path d="M64 62 118 88 64 114 10 88Z" fill="#4b3fd1"/>
+  <path d="M64 62 118 88 64 114 10 88" fill="none" stroke="#ffffff" stroke-opacity=".35" stroke-width="2"/>
+  <circle cx="64" cy="88" r="9" fill="#ffffff"/>
+</svg>

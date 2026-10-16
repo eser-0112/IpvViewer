@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Visualizador IPV
+GenericName=Visualizador de projetos do ibisPaint X
+Comment=Abra projetos .ipv do ibisPaint X e veja as camadas ou os quadros da animação
+Exec=ipv-viewer %f
+Icon=io.github.eser_0112.IpvViewer
+Terminal=false
+Categories=Graphics;Viewer;GTK;
+MimeType=application/x-ibispaint-project;
+StartupNotify=true
+Keywords=ibisPaint;ipv;camadas;desenho;animação;

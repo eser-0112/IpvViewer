@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+"""Ponto de entrada: funciona instalado (Flatpak) e direto da pasta do projeto."""
+import os
+import sys
+
+aqui = os.path.dirname(os.path.realpath(__file__))
+for pasta in ("/app/share/ipv-viewer", os.path.join(aqui, "..", "src")):
+    if os.path.isdir(os.path.join(pasta, "ipv_viewer")):
+        sys.path.insert(0, pasta)
+        break
+
+from ipv_viewer.app import main  # noqa: E402
+
+sys.exit(main())

@@ -33,12 +33,12 @@ sudo pacman -S flatpak flatpak-builder
 flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 # descubra qual versão do runtime GNOME existe e confira a linha runtime-version
-# do arquivo io.github.SEU_USUARIO.IpvViewer.yml (hoje está '50')
+# do arquivo io.github.eser_0112.IpvViewer.yml (hoje está '50')
 flatpak remote-ls flathub --runtime | grep org.gnome.Platform
 
 flatpak install --user flathub org.gnome.Platform//50 org.gnome.Sdk//50
-flatpak-builder --user --install --force-clean build-dir io.github.SEU_USUARIO.IpvViewer.yml
-flatpak run io.github.SEU_USUARIO.IpvViewer
+flatpak-builder --user --install --force-clean build-dir io.github.eser_0112.IpvViewer.yml
+flatpak run io.github.eser_0112.IpvViewer
 ```
 
 Se a versão '50' não existir, troque no `.yml` pela que apareceu no `grep` e refaça.
@@ -48,8 +48,8 @@ oferecê-lo para `.ipv`.
 Pra gerar um arquivo `.flatpak` e mandar pra alguém:
 
 ```fish
-flatpak-builder --force-clean --repo=repo build-dir io.github.SEU_USUARIO.IpvViewer.yml
-flatpak build-bundle repo ipv-viewer.flatpak io.github.SEU_USUARIO.IpvViewer
+flatpak-builder --force-clean --repo=repo build-dir io.github.eser_0112.IpvViewer.yml
+flatpak build-bundle repo ipv-viewer.flatpak io.github.eser_0112.IpvViewer
 # quem recebe instala com: flatpak install ipv-viewer.flatpak
 ```
 
@@ -64,11 +64,11 @@ flatpak build-bundle repo ipv-viewer.flatpak io.github.SEU_USUARIO.IpvViewer
 
 ## 3. Trocar o ID (obrigatório pra publicar)
 
-O ID atual (`io.github.SEU_USUARIO.IpvViewer`) é só um chute. Pro Flathub ele precisa ser
-`io.github.SEU_USUARIO_DO_GITHUB.IpvViewer` (ou um domínio que seja seu):
+O ID atual (`io.github.eser_0112.IpvViewer`) é só um chute. Pro Flathub ele precisa ser
+`io.github.eser_0112_DO_GITHUB.IpvViewer` (ou um domínio que seja seu):
 
 ```fish
-python3 tools/trocar-id.py io.github.SEU_USUARIO.IpvViewer
+python3 tools/trocar-id.py io.github.eser_0112.IpvViewer
 ```
 
 Ele troca o ID dentro dos arquivos e renomeia os arquivos de `data/` e o `.yml`.

@@ -1,0 +1,38 @@
+# Receita do Flatpak. Cada linha está explicada em README.md (seção "Flatpak").
+app-id: io.github.eser_0112.IpvViewer
+runtime: org.gnome.Platform
+runtime-version: '50'
+sdk: org.gnome.Sdk
+command: ipv-viewer
+
+finish-args:
+  # janela: Wayland, com X11 como reserva
+  - --share=ipc
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --device=dri
+  # Sem --filesystem: o app só enxerga os arquivos que você escolhe na janela
+  # "Abrir" ou arrasta pra dentro dele (isso passa pelo portal do sistema).
+
+modules:
+  - name: ipv-viewer
+    buildsystem: simple
+    build-commands:
+      - install -d /app/share/ipv-viewer
+      - cp -r src/ipv_viewer /app/share/ipv-viewer/
+      - find /app/share/ipv-viewer -name __pycache__ -type d -prune -exec rm -rf {} +
+      - install -Dm755 bin/ipv-viewer /app/bin/ipv-viewer
+      - install -Dm644 data/io.github.eser_0112.IpvViewer.desktop -t /app/share/applications
+      - install -Dm644 data/io.github.eser_0112.IpvViewer.metainfo.xml -t /app/share/metainfo
+      - install -Dm644 data/io.github.eser_0112.IpvViewer.svg -t /app/share/icons/hicolor/scalable/apps
+      - install -Dm644 data/io.github.eser_0112.IpvViewer.xml -t /app/share/mime/packages
+    sources:
+      - type: dir
+        path: .
+        skip:
+          - .git
+          - .flatpak-builder
+          - build-dir
+          - repo
+          - docs
+          - tests

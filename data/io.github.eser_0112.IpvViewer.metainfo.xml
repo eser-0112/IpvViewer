@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.eser_0112.IpvViewer</id>
+  <name>Visualizador IPV</name>
+  <summary>Abra projetos .ipv do ibisPaint X</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <developer id="io.github.eser">
+    <name>Eser</name>
+  </developer>
+  <description>
+    <p>
+      Abre arquivos de projeto do ibisPaint X (.ipv) e mostra as camadas do desenho
+      ou os quadros de uma animação, mesmo em arquivos que não abrem em outro lugar.
+    </p>
+    <p>Recursos:</p>
+    <ul>
+      <li>Galeria com as camadas atuais, estados antigos e recortes do arquivo</li>
+      <li>Zoom e fundo xadrez, branco ou preto para ver a transparência</li>
+      <li>Salvar uma imagem, ou todas, como PNG</li>
+      <li>Diferencia animação de desenho</li>
+    </ul>
+    <p>
+      O formato .ipv não é documentado: ele foi decifrado por engenharia reversa.
+      Pode haver arquivos que ainda não funcionam, e nomes, opacidade e visibilidade das
+      camadas ainda não são lidos.
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.eser_0112.IpvViewer.desktop</launchable>
+  <provides>
+    <mediatype>application/x-ibispaint-project</mediatype>
+  </provides>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+  <categories>
+    <category>Graphics</category>
+    <category>Viewer</category>
+  </categories>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.1.0" date="2026-10-15">
+      <description>
+        <p>Primeira versão.</p>
+      </description>
+    </release>
+  </releases>
+</component>
