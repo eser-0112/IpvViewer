@@ -115,4 +115,4 @@ python3 -m unittest discover -s tests -v
 
 ## Licença
 
-MIT (troque se preferir outra).
+MIT
